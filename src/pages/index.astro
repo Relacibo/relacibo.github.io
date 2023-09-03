@@ -44,6 +44,11 @@ import "@fontsource/forum";
         title="Steam"
         body="Zum daddeln"
       />
+      <Card
+        href="https://discordapp.com/users/139141338053476352"
+        title="Discord"
+        body="Halt so zum kommunizieren"
+      />
     </ul>
     <div class="appendix-container">
       <div class="emo">⛓️</div>
@@ -51,9 +56,9 @@ import "@fontsource/forum";
         <div class="appendix-text">
           Ich hab gedacht P⛤ wäre real,
         </div>
-        <div class="appendix-text-emojis">😕🔍👻🤦🏻‍♀️</div>
+        <div class="appendix-text-emojis">😕🔎👻🤦🏻‍♀️</div>
         <div class="appendix-text">
-          aber ich glaub ich bin einfach nur dumm!
+          aber ich glaub ich bin einfach nur dumm!??!
         </div>
       </div>
       <div class="emo">🔥</div>
@@ -125,9 +130,10 @@ import "@fontsource/forum";
   }
   .appendix-container {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: center;
   }
   .appendix-text {
     font-size: 1.7rem;
@@ -135,6 +141,8 @@ import "@fontsource/forum";
     text-align: center;
   }
   .emo {
+    display: flex;
+    justify-self: center;
     font-size: 7rem;
     margin: 0.5rem;
   }
