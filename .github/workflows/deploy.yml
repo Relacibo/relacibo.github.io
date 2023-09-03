@@ -9,6 +9,9 @@ permissions:
   id-token: write
 jobs:
   build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
     steps:
@@ -17,7 +20,10 @@ jobs:
 
       - name: Install, build, and upload your site
         uses: withastro/action@v0
-
+        
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
