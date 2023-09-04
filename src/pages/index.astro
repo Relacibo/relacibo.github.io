@@ -48,12 +48,13 @@ import "@fontsource/forum";
     <div class="appendix-container">
       <div class="emo">⛓️</div>
       <div class="appendix">
-        <div class="appendix-text">
-          Alles ist immer so kompliziert... idk
-        </div>
+        <div class="appendix-text">Alles ist immer so kompliziert... idk</div>
         <div class="appendix-text-emojis">🙂</div>
         <div class="appendix-text">
           Selbst wenn ich etwas möglichst einfach machen will
+        </div>
+        <div class="appendix-text">
+          <a href="https://tellonym.me/relacibo">Tellonym</a>
         </div>
       </div>
       <div class="emo">🔥</div>
@@ -146,8 +147,14 @@ import "@fontsource/forum";
     align-items: center;
     flex-direction: column;
   }
+
+  .appendix-text > a {
+    text-decoration: none;
+    color: rgb(255, 142, 240);
+  }
+
   .appendix-text-emojis {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
   }
 
   @media (max-width: 767px) {
@@ -159,7 +166,7 @@ import "@fontsource/forum";
     }
 
     .appendix {
-      gap: .5rem;
+      gap: 0.5rem;
     }
 
     .appendix-text {
