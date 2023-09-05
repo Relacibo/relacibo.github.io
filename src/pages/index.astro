@@ -8,9 +8,9 @@ import "@fontsource/forum";
 <Layout title="Meine Seite">
   <main>
     <h1>Relacibo's Seite</h1>
-    <h3>
+    <div class="tellonym">
       <a href="https://tellonym.me/relacibo">Tellonym</a>
-    </h3>
+    </div>
     <ul role="list" class="link-card-grid">
       <Card
         href="https://github.com/Relacibo"
@@ -51,16 +51,7 @@ import "@fontsource/forum";
     <div class="appendix-container">
       <div class="emo">⛓️</div>
       <div class="appendix">
-        <div class="appendix-text">
-          Happy BDay Öhrchen
-        </div>
         <div class="appendix-text-emojis">🥳🤩🎂🎉</div>
-        <div class="appendix-text">
-          Weiß nicht, hab an dich gedacht. Gl mit allem 
-        </div>
-        <div class="appendix-text">
-          Frauen haben schon was eigenes, ich weiß auch nicht.
-        </div>
       </div>
       <div class="emo">🔥</div>
     </div>
@@ -94,19 +85,6 @@ import "@fontsource/forum";
     text-align: center;
     margin-bottom: 1em;
     color: white
-  }
-
-  h3 {
-    font-family: "Pacifico", sans-serif;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-    color: white
-  }
-
-  h3 > a {
-    text-decoration: none;
   }
 
   .text-gradient {
@@ -173,7 +151,7 @@ import "@fontsource/forum";
   }
 
   .appendix-text-emojis {
-    font-size: 1.5rem;
+    font-size: 4rem;
   }
 
   @media (max-width: 767px) {
@@ -191,5 +169,25 @@ import "@fontsource/forum";
     .appendix-text {
       font-size: 1.7rem;
     }
+  }
+  .tellonym {
+    font-size: 1.5rem;
+    font-family: "Forum", sans-serif;
+    background-color: rgb(55, 62, 53);
+    border-style: solid;
+    border-color: #dd9696;
+    border-radius: 10px;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    padding: 0;
+  }
+
+  .tellonym > a {
+    text-decoration: none;
+    color: #dd9696;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 </style>
