@@ -1,16 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import Rose from "../components/Rose.astro";
 import "@fontsource/pacifico";
 import "@fontsource/forum";
 ---
 
 <Layout title="Meine Seite">
+  <Rose pos="top-left"/>
+  <Rose pos="top-right"/>
+  <Rose pos="bottom-left"/>
+  <Rose pos="bottom-right"/>
   <main>
     <div class="tellonym">
       <a href="https://tellonym.me/relacibo">Tellonym</a>
     </div>
-    <h1>Relacibo's Seite</h1>
+    <h1>🌹Relacibo's Seite🌹</h1>
     <ul role="list" class="link-card-grid">
       <Card
         href="https://github.com/Relacibo"
@@ -51,8 +56,13 @@ import "@fontsource/forum";
     <div class="appendix-container">
       <div class="emo">⛓️</div>
       <div class="appendix">
-        
-<div class="appendix-text">Ich mag <a href="https://m.youtube.com/shorts/ikBPUJvSNXE">Rosen</a>.</div>        <div class="appendix-text-emojis">🌹🌹🌹🫶🌹🌹🌹</div>
+        <div class="appendix-text">
+          Ich mag <a href="https://m.youtube.com/shorts/ikBPUJvSNXE">Rosen</a>.
+        </div>
+        <div class="appendix-text-emojis">🌹🌹🌹🫶🌹🌹🌹</div>
+        <div class="appendix-text">
+          Ich hab doch einen Schaden...
+        </div>
       </div>
       <div class="emo">🔥</div>
     </div>
@@ -85,7 +95,7 @@ import "@fontsource/forum";
     line-height: 1;
     text-align: center;
     margin-bottom: 1em;
-    color: white
+    color: white;
   }
 
   .text-gradient {
@@ -158,8 +168,8 @@ import "@fontsource/forum";
   .tellonym {
     font-size: 1.5rem;
     position: absolute;
-    top: 1rem;
-    right: 2rem;
+    top: 5rem;
+    right: 6rem;
     padding: 0;
   }
 

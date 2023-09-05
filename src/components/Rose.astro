@@ -1,0 +1,43 @@
+---
+interface Props {
+  deg: number;
+  pos: string;
+}
+const { deg, pos } = Astro.props;
+import { getImage } from "astro:assets";
+import roses from '../images/roses.png';
+const bg = await getImage({ src: roses, format: 'avif' })
+---
+<div class=`rose ${pos}` style=`background: url(${bg.src}); background-size: contain;`></div>
+
+<style>
+  .rose {
+    position: fixed;
+    z-index: 10;
+    width: 10%;
+    height: 20%;
+  }
+
+.top-left {
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  transform: rotate(180deg);
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  transform: rotate(90deg);
+}
+</style>
