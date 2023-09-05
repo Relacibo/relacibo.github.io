@@ -8,15 +8,15 @@ import { getImage } from "astro:assets";
 import roses from '../images/roses.png';
 const bg = await getImage({ src: roses, format: 'avif' })
 ---
-<div class=`rose ${pos}` style=`background: url(${bg.src}); background-size: contain;`></div>
+<div class=`rose ${pos}` style=`background: url(${bg.src}); background-size: cover;`></div>
 
 <style>
   .rose {
     position: fixed;
     pointer-events: none;
     z-index: 10;
-    width: 10%;
-    height: 20%;
+    width: 10rem;
+    height: 10rem;
   }
 
 .top-left {
