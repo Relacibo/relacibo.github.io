@@ -1,9 +1,8 @@
 ---
 interface Props {
-  deg: number;
   pos: string;
 }
-const { deg, pos } = Astro.props;
+const { pos } = Astro.props;
 import { getImage } from "astro:assets";
 import roses from '../images/roses.png';
 const bg = await getImage({ src: roses, format: 'avif' })
@@ -40,5 +39,12 @@ const bg = await getImage({ src: roses, format: 'avif' })
   bottom: 0;
   right: 0;
   transform: rotate(90deg);
+}
+@media (max-width: 767px) {
+  .rose {
+    width: 5rem;
+    height: 5rem;
+    opacity: .5;
+  }
 }
 </style>
