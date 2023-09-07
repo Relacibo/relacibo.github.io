@@ -7,10 +7,10 @@ import "@fontsource/forum";
 ---
 
 <Layout title="Meine Seite">
-  <Rose pos="top-left"/>
-  <Rose pos="top-right"/>
-  <Rose pos="bottom-left"/>
-  <Rose pos="bottom-right"/>
+  <Rose pos="top-left" />
+  <Rose pos="top-right" />
+  <Rose pos="bottom-left" />
+  <Rose pos="bottom-right" />
   <main>
     <div class="tellonym">
       <a href="https://tellonym.me/relacibo">Tellonym</a>
@@ -57,9 +57,9 @@ import "@fontsource/forum";
       <div class="emo">⛓️</div>
       <div class="appendix">
         <div class="appendix-text">
-          Ich mag <a href="https://m.youtube.com/shorts/ikBPUJvSNXE">Rosen</a>.
+          Uff, diese Seite sieht mittlerweile richtig 💩 aus.
         </div>
-        <div class="appendix-text-emojis">🌹🌹🌹🫶🌹🌹🌹</div>
+        <div class="appendix-text-emojis">💤🌹🌹🌹🫶🌹🌹🌹💤</div>
         <div class="appendix-text">
           Ich will 70 Stunden am Stück jetzt am liebsten schlafen...
         </div>
@@ -75,7 +75,8 @@ import "@fontsource/forum";
     padding: 1rem;
     width: 800px;
     max-width: calc(100% - 2rem);
-    color: white;
+    border: solid #e978e2 2px;
+    border-radius: 1rem;
     font-size: 20px;
     line-height: 1.6;
   }
@@ -133,6 +134,8 @@ import "@fontsource/forum";
     padding: 0;
   }
   .appendix-container {
+    background-color: #0f100f;
+    border-radius: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -187,6 +190,9 @@ import "@fontsource/forum";
   }
 
   @media (max-width: 767px) {
+    main {
+      border: none;
+    }
     .appendix-container {
       flex-direction: column;
       align-items: center;

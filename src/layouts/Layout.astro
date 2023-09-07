@@ -3,6 +3,9 @@ interface Props {
   title: string;
 }
 const { title } = Astro.props;
+import { getImage } from "astro:assets";
+import roses from "../images/rose_pattern.png";
+const bg = await getImage({ src: roses, format: "avif" });
 ---
 
 <!doctype html>
@@ -16,13 +19,26 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <slot />
-    <span class="footer">
-      <div class="attribution">
-        <a href="https://www.vecteezy.com/free-png/watercolor"
-          >Watercolor PNGs by Vecteezy</a
-        >
-      </div></span
+    <div class="background" style=`background-image: url(${bg.src});`></div>
+    <span>
+      <div style="margin-top: .5rem;">
+        <slot />
+      </div>
+      <span class="footer">
+        <div class="attribution-container">
+          <div class="attribution">
+            <a href="https://www.vecteezy.com/free-png/watercolor"
+              >Watercolor PNGs by Vecteezy</a
+            >
+          </div>
+          <div class="attribution">
+            <a
+              href="https://www.freepik.com/free-vector/hand-drawn-floral-leaves-seamless-pattern_36139790.htm#query=rose%20seamless%20pattern&position=1&from_view=keyword&track=ais"
+              >Image by lukasdedi</a
+            > on Freepik
+          </div>
+        </div></span
+      ></span
     >
   </body>
 </html>
@@ -40,8 +56,32 @@ const { title } = Astro.props;
   }
   html {
     font-family: system-ui, sans-serif;
-    background: rgb(24, 24, 19);
+    color: white;
+    background: rgb(16,23,11);
+background: linear-gradient(11deg, rgba(16,23,11,1) 0%, rgba(41,25,25,1) 100%); 
   }
+
+  body {
+    margin: 0;
+  }
+
+  .background {
+    background-repeat: repeat;
+    position: fixed;
+    z-index: -2;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: #ff8585;
+  }
+
   code {
     font-family:
       Menlo,
@@ -56,23 +96,22 @@ const { title } = Astro.props;
 
   .footer {
     display: block;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
     width: 100%;
   }
 
-  .attribution {
+  .attribution-container {
+    display: flex;
+    flex-direction: column;
     margin-left: auto;
     margin-right: 10rem;
     font-size: 1rem;
     width: fit-content;
   }
 
-  .attribution > a {
-    color: #ff8585;
-  }
-
   @media (max-width: 767px) {
-    .attribution {
+    .attribution-container {
       margin-left: auto;
       margin-right: auto;
     }
