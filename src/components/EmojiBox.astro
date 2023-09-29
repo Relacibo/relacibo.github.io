@@ -1,0 +1,70 @@
+---
+interface Props {
+  left?: string;
+  right?: string;
+  text: (string | { size: number; content: string })[];
+}
+
+const { left = "⛓️", right = "🔥", text } = Astro.props;
+---
+
+<div class="appendix-container">
+  <div class="emo">{left}</div>
+  <div class="appendix">
+    {
+      text.map((obj) => {
+        const {size, content} = obj || { size: 1.7, content: obj};
+        return <div class="appendix-text" style={`font-size: ${size}rem;`}>{content}</div>;
+      }
+        )
+    }
+  </div>
+  <div class="emo">{right}</div>
+</div>
+
+<style>
+  .appendix-container {
+    background-color: #0f100f;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .appendix-text {
+    font-size: 1.2rem;
+    font-family: "Forum", sans-serif;
+    text-align: center;
+  }
+
+  .emo {
+    display: flex;
+    justify-self: center;
+    font-size: 7rem;
+    margin: 0.5rem;
+  }
+  .appendix {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .appendix-text > a {
+    text-decoration: none;
+    color: rgb(255, 142, 240);
+  }
+
+  @media (max-width: 767px) {
+    .appendix-container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+    }
+
+    .appendix {
+      gap: 0.5rem;
+    }
+  }
+</style>

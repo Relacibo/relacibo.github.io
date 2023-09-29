@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 import Rose from "../components/Rose.astro";
+import LinkCollection from "../content/LinkCollection.astro";
+import Emojis from "../content/Emojis.astro";
 import "@fontsource/pacifico";
 import "@fontsource/forum";
 ---
@@ -15,54 +16,9 @@ import "@fontsource/forum";
     <div class="tellonym">
       <a href="https://tellonym.me/relacibo">Tellonym</a>
     </div>
-    <h1>🌹Relacibo's Seite🌹</h1>
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="https://github.com/Relacibo"
-        title="Github Profil"
-        body="Git repos"
-      />
-      <Card
-        href="https://www.instagram.com/relacibo/"
-        title="Insta"
-        body="Ein paar sinnlose Bilder"
-      />
-      <Card
-        href="https://www.youtube.com/channel/UCvGIEN8MYq0wwfhoMBDiHfg"
-        title="Youtube"
-        body="Ein paar sinnlose Videos"
-      />
-      <Card
-        href="https://www.twitch.tv/relacibo"
-        title="Twitch"
-        body="Ein paar sinnlose Streams"
-      />
-      <Card
-        href="https://lichess.org/@/Relacibo"
-        title="Lichess"
-        body="Schach"
-      />
-      <Card
-        href="https://steamcommunity.com/id/relacibo/"
-        title="Steam"
-        body="Zum daddeln"
-      />
-      <Card
-        href="https://discordapp.com/users/139141338053476352"
-        title="Discord"
-        body="Halt so zum kommunizieren"
-      />
-    </ul>
-    <div class="appendix-container">
-      <div class="emo">⛓️</div>
-      <div class="appendix">
-        <div class="appendix-text-emojis">🙂</div>
-        <div class="appendix-text">
-          Ich bin absolut planlos :(
-        </div>
-      </div>
-      <div class="emo">🔥</div>
-    </div>
+    <h1>Relacibo's Seite</h1>
+    <LinkCollection />
+    <Emojis />
   </main>
 </Layout>
 
@@ -124,46 +80,6 @@ import "@fontsource/forum";
   .instructions strong {
     color: rgb(var(--accent-light));
   }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 2rem;
-    padding: 0;
-  }
-  .appendix-container {
-    background-color: #0f100f;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .appendix-text {
-    font-size: 1.2rem;
-    font-family: "Forum", sans-serif;
-    text-align: center;
-  }
-  .emo {
-    display: flex;
-    justify-self: center;
-    font-size: 7rem;
-    margin: 0.5rem;
-  }
-  .appendix {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .appendix-text > a {
-    text-decoration: none;
-    color: rgb(255, 142, 240);
-  }
-
-  .appendix-text-emojis {
-    font-size: 2.3rem;
-  }
 
   .tellonym {
     font-size: 1.5rem;
@@ -189,20 +105,6 @@ import "@fontsource/forum";
   @media (max-width: 767px) {
     main {
       border: none;
-    }
-    .appendix-container {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 3rem;
-    }
-
-    .appendix {
-      gap: 0.5rem;
-    }
-
-    .appendix-text {
-      font-size: 1.7rem;
     }
 
     .tellonym {
