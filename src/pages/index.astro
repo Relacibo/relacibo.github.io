@@ -5,6 +5,8 @@ import LinkCollection from "../content/LinkCollection.astro";
 import Emojis from "../content/Emojis.astro";
 import "@fontsource/pacifico";
 import "@fontsource/forum";
+import { Image } from "astro:assets";
+import snow from "../images/snow.jpg";
 ---
 
 <Layout title="Meine Seite">
@@ -19,6 +21,9 @@ import "@fontsource/forum";
     <h1>Relacibo's Seite</h1>
     <LinkCollection />
     <Emojis />
+    <div class="my-image">
+      <Image class="the-image" src={snow} alt="Schnee." width="512" />
+    </div>
   </main>
 </Layout>
 
@@ -79,6 +84,18 @@ import "@fontsource/forum";
   }
   .instructions strong {
     color: rgb(var(--accent-light));
+  }
+
+  .my-image {
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .the-image {
+    border-radius: 5px;
   }
 
   .tellonym {
