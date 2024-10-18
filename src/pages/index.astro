@@ -1,19 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Rose from "../components/Rose.astro";
-import LinkCollection from "../content/LinkCollection.astro";
 import Emojis from "../content/Emojis.astro";
 import "@fontsource/pacifico";
 import "@fontsource/forum";
-import { Image } from "astro:assets";
-import snow from "../images/snow.jpg";
 ---
 
 <Layout title="Meine Seite">
-  <Rose pos="top-left" />
-  <Rose pos="top-right" />
-  <Rose pos="bottom-left" />
-  <Rose pos="bottom-right" />
   <main>
     <h1>Relacibo's Seite</h1>
       Hi? Mein Brain ist irgendwie leeer.......
@@ -93,40 +85,9 @@ import snow from "../images/snow.jpg";
     border-radius: 5px;
   }
 
-  .tellonym {
-    font-size: 1.5rem;
-    position: absolute;
-    top: 5rem;
-    right: 6rem;
-    padding: 0;
-  }
-
-  .tellonym > a {
-    text-decoration: none;
-    font-family: "Forum", sans-serif;
-    background-color: rgb(55, 62, 53);
-    border-style: solid;
-    border-color: #dd9696;
-    border-radius: 10px;
-    color: #dd9696;
-    padding: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-
   @media (max-width: 767px) {
     main {
       border: none;
-    }
-
-    .tellonym {
-      position: inherit;
-      font-size: 2rem;
-    }
-    .tellonym > a {
-      display: block;
-      padding: 1.3rem;
-      text-align: center;
     }
   }
 </style>
