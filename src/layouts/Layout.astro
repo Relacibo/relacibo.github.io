@@ -16,29 +16,16 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <div style="margin-top: .5rem;">
+      <slot />
+    </div>
   </body>
 </html>
 <style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-  }
-  html {
-    font-family: system-ui, sans-serif;
-    color: white;
-    background: rgb(16,23,11);
-background: linear-gradient(11deg, rgba(16,23,11,1) 0%, rgba(41,25,25,1) 100%); 
-  }
 
   body {
     margin: 0;
+    background-color: blueviolet;
   }
 
   .background {
