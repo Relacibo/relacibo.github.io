@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Emojis from "../content/Emojis.astro";
+import Comments from "../components/Comments.astro";
 import "@fontsource/pacifico";
 import "@fontsource/forum";
 ---
@@ -10,6 +11,9 @@ import "@fontsource/forum";
     <h1>Relacibo's Seite</h1>
       Hi? Mein Brain ist irgendwie leeer.......
     <Emojis />
+    <div class="utterances-comments">
+      <Comments/>
+    </div>
   </main>
 </Layout>
 
@@ -83,6 +87,10 @@ import "@fontsource/forum";
 
   .the-image {
     border-radius: 5px;
+  }
+
+  .utterances-comments {
+    margin-top: 1rem;
   }
 
   @media (max-width: 767px) {
