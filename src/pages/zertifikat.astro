@@ -19,7 +19,11 @@ import "@fontsource/comic-neue/700.css";
 
       <div class="pdf-stage" id="pdf-stage">
         <div class="pdf-window">
-          <iframe src="/zertifikat.pdf" title="Musterzertifikat (PDF)" class="pdf-frame"></iframe>
+          <img
+            src="/zertifikat-preview.png"
+            alt="Musterzertifikat — Vorschau"
+            class="pdf-frame"
+          />
           {Array.from({ length: 8 }, (_, i) => (
             <div class="pdf-cover" style={`top: ${i * 12.5}%;`}></div>
           ))}
@@ -27,7 +31,8 @@ import "@fontsource/comic-neue/700.css";
       </div>
       <p class="pdf-status" id="pdf-status">Übertrage zertifikat.pdf … 0%</p>
       <p class="smallprint center">
-        Das PDF wird direkt im Browser angezeigt. Falls nicht: einfach einen Knopf drücken.
+        Die Vorschau ist ein PNG-Abzug des Zertifikats — das Original-PDF laden Sie
+        mit den Knöpfen unten herunter.
       </p>
 
       <div class="actions">
@@ -305,7 +310,8 @@ import "@fontsource/comic-neue/700.css";
   .pdf-frame {
     display: block;
     width: 100%;
-    height: 640px;
+    max-width: 100%;
+    height: auto;
     border: 3px inset #808080;
     background: #fffdf2;
   }
@@ -448,9 +454,6 @@ import "@fontsource/comic-neue/700.css";
   @media (max-width: 640px) {
     .window-body {
       padding: 1rem 0.8rem 1.4rem;
-    }
-    .pdf-frame {
-      height: 420px;
     }
   }
 </style>
