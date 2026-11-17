@@ -6,7 +6,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -16,6 +16,20 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <noscript>
+      <style>
+        .window-body img[src*="/gifs/"],
+        .window-body .divider-sparkle {
+          clip-path: none !important;
+        }
+      </style>
+    </noscript>
+    <div class="starfield" aria-hidden="true">
+      <div class="star-tile"></div>
+      {Array.from({ length: 8 }, (_, i) => (
+        <div class="star-cover" style={`top: ${i * 12.5}%; animation-delay: ${(i * 1.0).toFixed(2)}s;`}></div>
+      ))}
+    </div>
     <div style="margin-top: .5rem;">
       <slot />
     </div>
@@ -23,9 +37,116 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
   body {
     margin: 0;
-    background-color: blueviolet;
+    background-color: #05030f;
+    background-image: url("/gifs/stars.gif");
+    background-repeat: repeat;
+    /* Deutsche Silbentrennung (lang="de") — z. B. „Beratungs-/gespräche“ */
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    overflow-wrap: break-word;
+  }
+
+  /* ===================== 56k-Streaming (geteilt: Hauptseite + Zertifikat-Center) ===================== */
+  /* GIFs ab der ersten Milliseconde versteckt (kein Aufblitzen) — JS deckt
+     sie zeilenweise auf; ohne JS hebt <noscript> unten das Verstecken auf */
+  .window-body img[src*="/gifs/"],
+  .window-body .divider-sparkle {
+    clip-path: inset(0 0 100% 0);
+  }
+  /* Der Text baut sich sehr schnell oben-nach-unten auf (der Rahmen wächst mit) */
+  html.stream-loading .window-body > *:not(.arrived) {
+    display: none;
+  }
+  /* Sternenhimmel als Jalousie: 8 dunkle Lamellen klappen nacheinander auf
+     und geben darunter das Sterne-Muster frei (Firefox-sicher: absolute
+     Positionierung im festen Container) */
+  html.stream-loading body {
+    background-image: none !important;
+  }
+  .starfield {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+  }
+  .star-tile {
+    position: absolute;
+    inset: 0;
+    background: url("/gifs/stars.gif") repeat rgb(5, 3, 15);
+    image-rendering: pixelated;
+  }
+  /* Stern-Jalousie: 8 Abdeckungen verschwinden nacheinander von links nach
+     rechts und geben die Sterne bandweise frei — gleichzeitig zu den GIFs */
+  .star-cover {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 12.7%;
+    background: rgb(5, 3, 15);
+    opacity: 0;
+  }
+  html.stream-loading .star-cover {
+    opacity: 1;
+    animation: cover-sweep 0.95s steps(12) both;
+  }
+  @keyframes cover-sweep {
+    from {
+      clip-path: inset(0 0 0 0);
+    }
+    to {
+      clip-path: inset(0 0 0 100%);
+    }
+  }
+  /* Netscape-Statusleiste unten */
+  .netload-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #c0c0c0;
+    border-top: 2px outset #c0c0c0;
+    padding: 3px 10px;
+    font-family: "Comic Neue", "Comic Sans MS", cursive;
+    font-size: 0.78rem;
+    color: #000;
+    transition: opacity 0.8s ease-out;
+  }
+  .netload-meter {
+    border: 1px solid #808080;
+    background: #000;
+    width: 170px;
+    height: 13px;
+    padding: 1px;
+    flex: none;
+  }
+  .netload-fill {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: repeating-linear-gradient(90deg, #1084d0 0 8px, #000080 8px 16px);
+  }
+  .netload-speed {
+    color: #404040;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .netload-bar {
+      display: none !important;
+    }
   }
 
   .background {
@@ -42,7 +163,11 @@ const { title } = Astro.props;
   }
 
   a {
-    color: #ff8585;
+    color: #7df9ff;
+  }
+
+  a:visited {
+    color: #ff85e0;
   }
 
   code {

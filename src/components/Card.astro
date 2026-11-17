@@ -3,15 +3,77 @@ interface Props {
 	title: string;
 	body: string;
 	href: string;
+	logo?: string;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body, logo } = Astro.props;
 ---
 
 <li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}🌹
+	<a href={href} target="_blank" rel="noopener">
+		<h2 aria-label={logo === "amazon" ? title : undefined}>
+			{logo === "gemini" && (
+				<svg
+					class="logo"
+					width="18"
+					height="18"
+					viewBox="0 0 14 14"
+					aria-hidden="true"
+					shape-rendering="crispEdges"
+				>
+					<rect x="6" y="0" width="2" height="14" fill="#7df9ff"></rect>
+					<rect x="0" y="6" width="14" height="2" fill="#7df9ff"></rect>
+					<rect x="5" y="5" width="4" height="4" fill="#ffffff"></rect>
+					<rect x="3" y="3" width="2" height="2" fill="#4285f4"></rect>
+					<rect x="9" y="3" width="2" height="2" fill="#4285f4"></rect>
+					<rect x="3" y="9" width="2" height="2" fill="#4285f4"></rect>
+					<rect x="9" y="9" width="2" height="2" fill="#4285f4"></rect>
+				</svg>
+			)}
+			{logo === "amazon" && (
+				<svg
+					class="logo logo-retro"
+					width="96"
+					height="26"
+					viewBox="0 0 96 26"
+					aria-hidden="true"
+				>
+					<rect width="96" height="26" rx="4" fill="#000000"></rect>
+					<rect width="96" height="26" rx="4" fill="none" stroke="#9090b8"></rect>
+					<text
+						x="48"
+						y="12"
+						text-anchor="middle"
+						font-family="serif"
+						font-weight="bold"
+						font-size="11"
+						fill="#ffffff">amazon.com</text
+					>
+					<text
+						x="48"
+						y="21.5"
+						text-anchor="middle"
+						font-family="sans-serif"
+						font-size="5.5"
+						fill="#cccccc">Earth's Biggest Bookstore</text
+					>
+				</svg>
+			)}
+			{logo === "linkedin" && (
+				<svg class="logo" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+					<rect width="24" height="24" rx="3" fill="#0a66c2"></rect>
+					<text
+						x="12"
+						y="17.5"
+						text-anchor="middle"
+						font-family="sans-serif"
+						font-weight="bold"
+						font-size="13"
+						fill="#ffffff">in</text
+					>
+				</svg>
+			)}
+			{logo !== "amazon" && title}
 		</h2>
 		<p>
 			{body}
@@ -21,42 +83,40 @@ const { href, title, body } = Astro.props;
 <style>
 	.link-card {
 		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #e978e2;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
-		opacity: 0.8;
 	}
 	.link-card > a {
-		width: 100%;
+		display: block;
+		height: 100%;
+		padding: 0.8rem 1rem;
 		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #1f201d;
-		opacity: 0.8;
+		color: #ffe600;
+		background: linear-gradient(180deg, #1a1a34, #0c0c1c);
+		border: 3px outset #9090b8;
+	}
+	.link-card > a:hover,
+	.link-card > a:focus {
+		background: linear-gradient(180deg, #4a0d4a, #2b0b45);
+		border-color: #ff85e0;
+		color: #fff;
 	}
 	h2 {
 		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+		font-size: 1.15rem;
+		color: #7df9ff;
+		text-shadow: 1px 1px 0 #b020b0;
+		display: flex;
+		align-items: center;
+		gap: 0.45rem;
+	}
+	.logo {
+		flex: none;
 	}
 	p {
-		margin-top: 0.5rem;
+		margin-top: 0.35rem;
 		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-		opacity: 1;
+		font-size: 0.95rem;
 	}
 	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
+		color: #ff85e0;
 	}
 </style>

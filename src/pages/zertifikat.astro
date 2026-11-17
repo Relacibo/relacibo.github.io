@@ -1,0 +1,456 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "@fontsource/comic-neue";
+import "@fontsource/comic-neue/700.css";
+---
+
+<Layout title="Zertifikat-Center — Relacibo's KI-Beratung">
+  <main class="win95">
+    <div class="window-body">
+      <h1 class="wordart">ZERTIFIKAT-CENTER</h1>
+
+      <p class="intro">
+        Willkommen in der <strong>Abteilung Zertifizierung</strong>. Ihr
+        Musterzertifikat der <strong class="neon">63-Tage-Methode™</strong> — direkt im
+        Browser, als Download und ausdruckbar.
+      </p>
+
+      <div class="divider-sparkle" role="presentation"></div>
+
+      <div class="pdf-stage" id="pdf-stage">
+        <div class="pdf-window">
+          <iframe src="/zertifikat.pdf" title="Musterzertifikat (PDF)" class="pdf-frame"></iframe>
+          {Array.from({ length: 8 }, (_, i) => (
+            <div class="pdf-cover" style={`top: ${i * 12.5}%;`}></div>
+          ))}
+        </div>
+      </div>
+      <p class="pdf-status" id="pdf-status">Übertrage zertifikat.pdf … 0%</p>
+      <p class="smallprint center">
+        Das PDF wird direkt im Browser angezeigt. Falls nicht: einfach einen Knopf drücken.
+      </p>
+
+      <div class="actions">
+        <a class="wbtn bold dl-link" id="dl-btn" href="/zertifikat.pdf" download>⬇ zertifikat.pdf herunterladen (63 KB · ca. 12 Sekunden bei 56k)</a>
+        <a class="wbtn bold dl-link" href="/zertifikat.pdf" target="_blank" rel="noopener">↗ Im neuen Tab öffnen</a>
+      </div>
+
+      <img src="/gifs/rainbow.gif" alt="Regenbogen-Trenner" class="divider pixelated" />
+
+      <p class="backlink"><a href="/">« Zurück zur Hauptseite</a></p>
+    </div>
+  </main>
+
+  <div class="dl-overlay" id="dl-overlay" hidden>
+    <div class="dl-dialog">
+      <div class="dl-titlebar">📊 Dateidownload wird ausgeführt — 63 KB</div>
+      <div class="dl-body">
+        <img src="/gifs/mail.gif" alt="" width="44" height="30" class="pixelated" />
+        <div class="dl-texts">
+          <strong>zertifikat.pdf</strong> von relacibo.github.io wird übertragen.
+          <div class="dl-meter"><span class="dl-fill" id="dl-fill"></span></div>
+          <div class="dl-stats" id="dl-stats">0 KB von 63 KB übertragen — 56k-Modem</div>
+        </div>
+      </div>
+      <p class="dl-note">
+        Diesen Dialog geöffnet lassen, bis die Übertragung abgeschlossen ist.
+        Öffnen des Dialogs mit höherer Geschwindigkeit nicht empfohlen (Modem teilt sich nicht).
+      </p>
+    </div>
+  </div>
+</Layout>
+
+<script is:inline>
+  // PDF-Jalousie: 8 Lamellen klappen in 10–15 s (zufällig) nacheinander auf
+  (() => {
+    const stage = document.getElementById("pdf-stage");
+    if (!stage || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const covers = stage.querySelectorAll(".pdf-cover");
+    const status = document.getElementById("pdf-status");
+    const total = 10000 + Math.random() * 5000; // mindestens 10 s, maximum 15 s
+    covers.forEach((c, i) => {
+      c.style.animationDelay = Math.round((i / covers.length) * total) + "ms";
+    });
+    stage.classList.add("loading");
+    let elapsed = 0;
+    const timer = setInterval(() => {
+      elapsed += 250;
+      const pct = Math.min(100, Math.round((elapsed / total) * 100));
+      if (status) status.textContent = "Übertrage zertifikat.pdf … " + pct + "%  (56k-Modem)";
+      if (elapsed < total + 900) return;
+      clearInterval(timer);
+      if (status) status.textContent = "Fertig — zertifikat.pdf vollständig übertragen.";
+      setTimeout(() => stage.classList.remove("loading"), 600);
+    }, 250);
+  })();
+
+  // --- 56k-Streaming fürs Zertifikat-Center ---
+  (() => {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document
+        .querySelectorAll('.window-body img[src*="/gifs/"], .window-body .divider-sparkle')
+        .forEach((el) => {
+          el.style.clipPath = "inset(0 0 0% 0)";
+        });
+      return;
+    }
+    document.documentElement.classList.add("stream-loading");
+    const DURATION = 6000;
+    const bar = document.createElement("div");
+    bar.className = "netload-bar";
+    bar.innerHTML =
+      '<span class="netload-label"></span>' +
+      '<span class="netload-meter"><span class="netload-fill"></span></span>' +
+      '<span class="netload-speed">28,8 kbps</span>';
+    document.body.appendChild(bar);
+    const label = bar.querySelector(".netload-label");
+    const fill = bar.querySelector(".netload-fill");
+
+    const chunks = document.querySelectorAll(".window-body > *");
+    chunks.forEach((el, i) => {
+      const when = 120 + 900 * (i / chunks.length) + Math.random() * 40;
+      setTimeout(() => el.classList.add("arrived"), when);
+    });
+
+    const BANDS = 24;
+    const schedules = new Map();
+    function scheduleFor(key) {
+      if (!schedules.has(key)) {
+        const target = 5000 + Math.random() * 15000;
+        const times = [];
+        let prev = 0;
+        for (let i = 1; i <= BANDS; i++) {
+          let t = (i / BANDS) * target + (Math.random() - 0.5) * (target / BANDS) * 1.7;
+          if (t <= prev) t = prev + 100;
+          prev = t;
+          times.push(Math.round(t));
+        }
+        schedules.set(key, times);
+      }
+      return schedules.get(key);
+    }
+    document
+      .querySelectorAll('.window-body img[src*="/gifs/"], .window-body .divider-sparkle')
+      .forEach((el) => {
+        const key = el.src || "sparkle";
+        el.style.clipPath = "inset(0 0 100% 0)";
+        scheduleFor(key).forEach((t, i) => {
+          const open = Math.round(((i + 1) / BANDS) * 100);
+          setTimeout(() => {
+            el.style.clipPath = "inset(0 0 " + (100 - open) + "% 0)";
+          }, t);
+        });
+      });
+
+    let elapsed = 0;
+    const statusTimer = setInterval(() => {
+      elapsed += 250;
+      const pct = Math.min(100, Math.round((elapsed / DURATION) * 100));
+      fill.style.width = pct + "%";
+      label.textContent =
+        "Lade Zertifikat-Center von relacibo.github.io … " + pct + "%  (" + (elapsed / 1000).toFixed(1).replace(".", ",") + " s)";
+      if (elapsed < DURATION + 250) return;
+      clearInterval(statusTimer);
+      fill.style.width = "100%";
+      label.textContent =
+        "Fertig — Zertifikat-Center geladen. Die restlichen Bilder folgen. (56k-Modem)";
+      bar.querySelector(".netload-speed").textContent = "⚡";
+      document.documentElement.classList.remove("stream-loading");
+      setTimeout(() => {
+        bar.style.opacity = "0";
+      }, 2600);
+    }, 250);
+  })();
+
+  // --- Download-Dialog: 63 KB bei 56k ≈ 12 s, dann echter Download ---
+  (() => {
+    const dlBtn = document.getElementById("dl-btn");
+    const overlay = document.getElementById("dl-overlay");
+    if (!dlBtn || !overlay) return;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return; // normaler Download
+    const TOTAL = 63000;
+    const stats = document.getElementById("dl-stats");
+    const fill = document.getElementById("dl-fill");
+    let transferred = 0;
+    let timer = null;
+    dlBtn.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      overlay.hidden = false;
+      transferred = 0;
+      fill.style.width = "0%";
+      timer = setInterval(() => {
+        transferred = Math.min(TOTAL, transferred + 900 + Math.round(Math.random() * 800));
+        const pct = Math.round((transferred / TOTAL) * 100);
+        fill.style.width = pct + "%";
+        const left = Math.max(0, Math.ceil(((TOTAL - transferred) / TOTAL) * 12));
+        if (stats)
+          stats.textContent =
+            Math.round(transferred / 1024) + " KB von 63 KB übertragen — 56k-Modem — noch ca. " + left + " Sekunden";
+        if (transferred < TOTAL) return;
+        clearInterval(timer);
+        if (stats)
+          stats.textContent = "Download vollständig — 63 KB in ca. 12 Sekunden (56k-Modem).";
+        const a = document.createElement("a");
+        a.href = "/zertifikat.pdf";
+        a.download = "zertifikat.pdf";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => {
+          overlay.hidden = true;
+        }, 2200);
+      }, 250);
+    });
+  })();
+</script>
+
+<style>
+  .win95 {
+    max-width: 860px;
+    margin: 1.5rem auto 3rem;
+    border: 5px solid;
+    border-image: linear-gradient(
+        90deg,
+        #ff4d4d,
+        #ffb84d,
+        #ffff4d,
+        #4dff88,
+        #4dd2ff,
+        #d24dff,
+        #ff4d4d
+      )
+      1;
+    background: rgba(8, 6, 22, 0.94);
+    box-shadow: 0 0 24px rgba(210, 77, 255, 0.45);
+  }
+
+  .window-body {
+    padding: 1.25rem 1.4rem 1.8rem;
+    color: #ffe600;
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+
+  .wordart {
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.1;
+    margin: 0.5rem 0 0.75rem;
+    background: linear-gradient(
+      90deg,
+      #ff4d4d,
+      #ffb84d,
+      #ffff4d,
+      #4dff88,
+      #4dd2ff,
+      #d24dff,
+      #ff4d4d
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-slide 5s linear infinite;
+    filter: drop-shadow(3px 3px 0 rgba(0, 0, 0, 0.9)) drop-shadow(0 0 10px #ff7bff);
+  }
+  @keyframes rainbow-slide {
+    to {
+      background-position: 200%;
+    }
+  }
+
+  .intro strong {
+    color: #4dff88;
+  }
+  .neon {
+    color: #ff7bff;
+    text-shadow: 0 0 8px #ff7bff;
+  }
+
+  .divider {
+    display: block;
+    width: 100%;
+    height: 14px;
+    margin: 1.2rem 0;
+  }
+  .divider-sparkle {
+    display: block;
+    width: 100%;
+    height: 22px;
+    margin: 1.2rem 0;
+    background: url("/gifs/sparkle.gif") repeat-x center;
+    image-rendering: pixelated;
+  }
+  .pixelated {
+    image-rendering: pixelated;
+  }
+
+  .smallprint {
+    font-size: 0.85rem;
+    color: #9a9ab8;
+    text-align: center;
+  }
+  .center {
+    text-align: center;
+  }
+
+  .pdf-stage {
+    position: relative;
+  }
+  .pdf-window {
+    position: relative;
+  }
+  .pdf-frame {
+    display: block;
+    width: 100%;
+    height: 640px;
+    border: 3px inset #808080;
+    background: #fffdf2;
+  }
+  .pdf-cover {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 12.9%;
+    background: rgb(5, 3, 15);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .pdf-stage.loading .pdf-cover {
+    opacity: 1;
+    animation: pdf-slat 0.8s steps(8) both;
+  }
+  @keyframes pdf-slat {
+    0% {
+      clip-path: inset(0 0 0 0);
+      opacity: 1;
+    }
+    99% {
+      clip-path: inset(0 0 0 100%);
+      opacity: 1;
+    }
+    100% {
+      clip-path: inset(0 0 0 100%);
+      opacity: 0;
+    }
+  }
+  .pdf-status {
+    font-size: 0.8rem;
+    color: #9a9ab8;
+    text-align: center;
+    margin-top: 0.4rem;
+  }
+
+  /* ===================== Download-Dialog ===================== */
+  .dl-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 600;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dl-overlay[hidden] {
+    display: none;
+  }
+  .dl-dialog {
+    width: min(440px, 92%);
+    background: #c0c0c0;
+    border: 2px outset #c0c0c0;
+    color: #000;
+    font-size: 0.9rem;
+  }
+  .dl-titlebar {
+    background: linear-gradient(90deg, #000080, #1084d0);
+    color: #fff;
+    font-weight: 700;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  .dl-body {
+    display: flex;
+    gap: 0.9rem;
+    padding: 0.9rem;
+    align-items: flex-start;
+  }
+  .dl-body img {
+    flex: none;
+    image-rendering: pixelated;
+  }
+  .dl-texts {
+    flex: 1;
+    line-height: 1.5;
+  }
+  .dl-meter {
+    border: 1px solid #808080;
+    background: #000;
+    height: 14px;
+    padding: 1px;
+    margin: 0.4rem 0;
+  }
+  .dl-fill {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: repeating-linear-gradient(90deg, #1084d0 0 8px, #000080 8px 16px);
+  }
+  .dl-stats {
+    font-size: 0.78rem;
+    color: #333;
+  }
+  .dl-note {
+    font-size: 0.75rem;
+    color: #555;
+    border-top: 1px solid #999;
+    padding-top: 0.4rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0;
+  }
+
+  .wbtn {
+    background: #c0c0c0;
+    border: 2px outset #c0c0c0;
+    color: #000;
+    font-family: inherit;
+    font-size: 0.8rem;
+    padding: 0.05rem 0.5rem;
+    cursor: pointer;
+  }
+  .wbtn:active {
+    border-style: inset;
+  }
+  .wbtn.bold {
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: center;
+    margin: 1.4rem 0 0.5rem;
+  }
+  .actions .dl-link {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .backlink {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .window-body {
+      padding: 1rem 0.8rem 1.4rem;
+    }
+    .pdf-frame {
+      height: 420px;
+    }
+  }
+</style>

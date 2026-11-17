@@ -1,101 +1,1117 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Emojis from "../content/Emojis.astro";
+import LinkCollection from "../content/LinkCollection.astro";
 import Comments from "../components/Comments.astro";
+import "@fontsource/comic-neue";
+import "@fontsource/comic-neue/700.css";
 import "@fontsource/pacifico";
-import "@fontsource/forum";
 ---
 
-<Layout title="Meine Seite">
-  <main>
-    <h1>Relacibo's Seite</h1>
-      Hi? Mein Brain ist irgendwie leeer.......
-    <Emojis />
-    <div class="utterances-comments">
-      <Comments/>
+<Layout title="Relacibo's KI-Beratung *** OFFIZIELL ***">
+  <main class="win95">
+    <div class="window-body">
+      <h1 class="wordart">RELACIBO'S<br />KI-BERATUNG</h1>
+
+      <div class="midi-row">
+        <button id="midi-btn" class="wbtn">🎵 MEGA-MIDI-Musik: AUS</button>
+      </div>
+
+      <p class="official">
+        <img src="/gifs/globe.gif" alt="spinnende Weltkugel" width="64" height="64" class="pixelated" />
+        <span>
+          *** OFFIZIELLE HOMEPAGE ***<br />
+          Künstliche Intelligenz. Verständlich. Verbindlich.<br />
+          seit 1996 zu Hause im Internet
+        </span>
+        <img src="/gifs/robot.gif" alt="Roboter-Kopf" width="32" height="36" class="pixelated" />
+      </p>
+
+      <div class="marquee-box">
+        <marquee scrollamount="7">
+          +++ WILLKOMMEN BEI RELACIBO'S KI-BERATUNG +++ IHR PARTNER FÜR KÜNSTLICHE INTELLIGENZ +++ KI-BERATER IN NUR 63 TAGEN +++ KEINE VORKENNTNISSE ERFORDERLICH +++ JETZT PLATZ SICHERN +++
+        </marquee>
+      </div>
+
+      <img src="/gifs/rainbow.gif" alt="Regenbogen-Trenner" class="divider pixelated" />
+
+      <p class="intro">
+        Willkommen bei <strong>Relacibo's KI-Beratung</strong> — Ihrem Partner für Künstliche
+        Intelligenz. Mit unserer bewährten <strong class="neon">63-Tage-Methode™</strong> begleiten
+        wir Sie strukturiert und verbindlich von der ersten Begegnung mit Gemini bis zur eigenen
+        Beratungs-Website. Keine Vorkenntnisse erforderlich — <strong>63 Tage</strong> reichen
+        vollkommen aus.
+      </p>
+
+      <div class="divider-sparkle" role="presentation"></div>
+      <h2>⭐ DIE REVOLUTIONÄRE 63-TAGE-METHODE™ ⭐</h2>
+
+      <table class="method-table">
+        <tr>
+          <th>Tag</th>
+          <th>Ihr Weg zum zertifizierten KI-Berater</th>
+        </tr>
+        <tr>
+          <td class="day">TAG 1</td>
+          <td>
+            <strong>Onboarding:</strong> Wir richten Gemini gemeinsam ein — die
+            Einwahlverbindung läuft über Cisco Systems (der Verbindungsaufbau ist
+            akustisch überprüfbar — das Modem teilt sich nicht). ☎
+            Voraussetzung: eine freie Telefonleitung.
+            Ihr Rechner muss zudem die folgenden <strong>Systemvoraussetzungen</strong> erfüllen:
+            <ul class="sysreq">
+              <li>Microsoft® Windows 3.1 oder höher (Mindestanforderung)</li>
+              <li>Freier Cinch-Eingang (wird aber erst ab Tag 62 benötigt)</li>
+              <li>PS/2-Maus und PS/2-Tastatur</li>
+              <li>Monitor</li>
+              <li>Drucker</li>
+              <li>Faxgerät (für den Empfang Ihrer Wallet-Adresse)</li>
+              <li>Cisco-Router für die Einwahlverbindung</li>
+              <li>Installationsmedien für Netscape Navigator und Gemini — liegen dem Rechner bei (auf Disketten)</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="day">TAG 2</td>
+          <td>
+            <strong>Beschaffung:</strong> Bestellung des professionellen Mikrofons über Amazon.
+            Wichtig: ausschließlich Modelle mit <strong>Cinch-Anschluss</strong> (rot/gelb). 🎙️
+          </td>
+        </tr>
+        <tr>
+          <td class="day">TAG 3–61</td>
+          <td>
+            <strong>Lieferzeitraum:</strong> Das Mikrofon trifft nach ca. 2 Monaten ein.
+            Diese Phase nutzen wir für die strategische Positionierung Ihres
+            LinkedIn-Profils als KI-Visionär.
+          </td>
+        </tr>
+        <tr>
+          <td class="day">TAG 62</td>
+          <td>
+            <strong>Anschluss:</strong> Das eingetroffene Mikrofon wird über den
+            Cinch-Anschluss mit Gemini verbunden. Im Anschluss erfolgt die
+            gemeinsame Funktionsprüfung. 🔌
+          </td>
+        </tr>
+        <tr>
+          <td class="day">TAG 63</td>
+          <td>
+            <strong>Abschlussprojekt:</strong> Sie prompten die Erstellung Ihrer Website.
+            Der konkrete Prompt unterliegt der Betriebsgeheimnis-Klausel des
+            Beratungsvertrags. Danach Zertifizierung: <strong>Sie sind jetzt
+            KI-Berater.</strong> 🎉
+          </td>
+        </tr>
+      </table>
+
+      <p class="table-foot">
+        <img src="/gifs/new.gif" alt="NEU!" width="52" height="26" class="pixelated" />
+        NEU: Jetzt inklusive offizieller Zertifizierung zum KI-Berater!
+        <img src="/gifs/new.gif" alt="NEU!" width="52" height="26" class="pixelated" />
+      </p>
+
+      <img src="/gifs/rainbow.gif" alt="Regenbogen-Trenner" class="divider pixelated" />
+
+      <h2>💬 WAS UNSERE KUNDEN SAGEN</h2>
+      <ul class="testimonials" role="list">
+        <li class="tst">
+          „Dank der 63-Tage-Methode bin ich heute zertifizierter KI-Berater. Klare
+          Struktur, verbindliche Termine."
+          <div class="who">— Sven aus Wuppertal</div>
+        </li>
+        <li class="tst">
+          „Das Mikrofon mit Cinch-Anschluss hebt unsere Beratungsgespräche auf ein
+          neues Niveau. Die zwei Monate Lieferzeit haben sich vollkommen gelohnt."
+          <div class="who">— Frank, Tech-Visionär</div>
+        </li>
+        <li class="tst">
+          „Unsere Website wurde von der KI innerhalb eines Abends erstellt. Seither
+          führen wir regelmäßige Beratungsgespräche — die KI und ich."
+          <div class="who">— Relacibo, Gründer &amp; CEO</div>
+        </li>
+        <li class="tst">
+          „⭐⭐⭐⭐⭐ Absolut empfehlenswert. Der nächste Beratungstermin steht
+          bereits fest."
+          <div class="who">— Ein Kunde</div>
+        </li>
+      </ul>
+
+      <div class="divider-sparkle" role="presentation"></div>
+      <h2>🤝 INVESTITION IN IHRE ZUKUNFT</h2>
+      <div class="pricebox">
+        <img src="/gifs/flame.gif" alt="Flammen" width="36" height="52" class="pixelated" />
+        <div>
+          <p class="price-old">Regulär: 0,315 BTC (4.999,99 DM)</p>
+          <p class="price-new blink">Einführungspreis: 0,063 BTC <span class="price-dm">(999,99 DM)</span></p>
+          <p class="price-note">Gültig bis auf Weiteres. Zahlung in 63 bequemen Raten möglich.</p>
+        </div>
+        <img src="/gifs/flame.gif" alt="Flammen" width="36" height="52" class="pixelated" />
+      </div>
+      <p class="smallprint">
+        * Mikrofon (Cinch-Anschluss) separat erhältlich — Lieferung ca. 2 Monate.
+        63 Tage Geld-zurück-Garantie. Zahlung in Bitcoin; die Wallet-Adresse senden
+        wir Ihnen per Fax. Kursangaben ohne Gewähr.
+      </p>
+
+      <h2>📜 IHR ABSCHLUSSZERTIFIKAT</h2>
+      <p class="smallprint center">
+        Nach Tag 63 gehört es Ihnen — das Muster liegt bereits bereit:
+      </p>
+      <p class="cert-links">
+        <a href="/zertifikat">Zertifikat-Center: ansehen &amp; PDF laden »</a>
+      </p>
+
+      <h2>📅 BERATUNGSTERMIN BUCHEN</h2>
+      <p class="smallprint center">
+        Echtes Echtzeit-Buchungsformular. Antwort innerhalb von 2 Monaten garantiert.
+      </p>
+      <form class="booking" id="booking-form">
+        <label>Name
+          <input id="booking-name" type="text" required maxlength="60" placeholder="Ihr vollständiger Name" />
+        </label>
+        <label>Wunschtermin
+          <input id="booking-date" type="date" required />
+        </label>
+        <p class="booking-hint" id="booking-hint"></p>
+        <label>Zeitfenster
+          <select id="booking-slot" disabled></select>
+        </label>
+        <p class="booking-hint">
+          Ihre Zeitfenster werden persönlich für Sie berechnet und gespeichert.
+        </p>
+        <label>Anliegen (optional)
+          <input id="booking-topic" type="text" maxlength="120" placeholder="Kurzbeschreibung Ihres Anliegens" />
+        </label>
+        <p class="booking-hint">
+          📹 Das Onboarding findet per Cisco WebEx über die 56k-Einwahl statt.
+          Bitte Geduld beim Bildaufbau.
+        </p>
+        <div class="booking-actions">
+          <button type="submit" class="wbtn bold">📧 PER E-MAIL BUCHEN</button>
+          <button type="button" id="fax-btn" class="wbtn bold">📠 PER FAX BUCHEN</button>
+        </div>
+        <p class="booking-hint">
+          Ihr E-Mail-Programm öffnet sich mit der fertigen Buchungsanfrage.
+        </p>
+      </form>
+
+      <h2>📩 ABONNIEREN SIE DEN E-MAIL-NEWSLETTER!</h2>
+      <form class="newsletter" id="newsletter">
+        <input type="email" placeholder="ihre-e-mail@aol.com" required aria-label="E-Mail" />
+        <button type="submit" class="wbtn bold">EINTRAGEN!!!</button>
+        <p class="smallprint">*Der Newsletter erscheint alle 63 Tage.</p>
+      </form>
+
+      <img src="/gifs/rainbow.gif" alt="Regenbogen-Trenner" class="divider pixelated" />
+
+      <h2>👀 DER BESUCHERZÄHLER</h2>
+      <div class="counter-box">
+        Sie sind Besucher Nr. <span id="counter-digits"></span>
+      </div>
+      <p class="smallprint center">
+        Besuchermessung nach modernsten Standards (Stand: 1996).
+      </p>
+
+      <div class="hurry blink">⚠️ HINWEIS: FREIE BERATUNGSPLÄTZE NUR BEGRENZT VERFÜGBAR ⚠️</div>
+
+      <img src="/gifs/arrow.gif" alt="Pfeil nach unten" width="40" height="44" class="pixelated arrow-img" />
+      <h2>📖 TRAGEN SIE SICH INS GÄSTEBUCH EIN!</h2>
+      <p class="smallprint center">
+        Das Gästebuch wird von unserer KI moderiert. Sachliche Beiträge sind willkommen.
+      </p>
+      <div class="guestbook">
+        <Comments />
+      </div>
+
+      <img src="/gifs/rainbow.gif" alt="Regenbogen-Trenner" class="divider pixelated" />
+
+      <h2>🔗 UNSERE VERTRAUENSWÜRDIGEN PARTNER</h2>
+      <p class="smallprint center">
+        (die offiziellen Werkzeuge der 63-Tage-Methode™)
+      </p>
+      <LinkCollection />
+
+      <img src="/gifs/rainbow.gif" alt="Regenbogen-Trenner" class="divider pixelated" />
+
+      <div class="bau">
+        <img src="/gifs/construction.gif" alt="Baustelle" width="150" height="96" class="pixelated" />
+        <p><strong>HIER KOMMT DEMNÄCHST EIN SCHAUBILD UNSERER LEISTUNGEN HIN.</strong></p>
+        <p class="smallprint">Der Platz ist bereits reserviert. Das Schaubild entsteht
+        derzeit in Microsoft® Paint.</p>
+        <img src="/gifs/mail.gif" alt="Brief mit Fahne" width="44" height="30" class="pixelated" />
+        <p class="smallprint">Fragen? Senden Sie uns eine E-Mail. Wir antworten innerhalb von 2 Monaten.</p>
+      </div>
+
+      <div class="badges">
+        <img src="/gifs/badge-netscape.gif" alt="Best viewed in Netscape 4.0" width="88" height="31" class="pixelated" />
+        <img src="/gifs/badge-html.gif" alt="Powered by HTML 3.2" width="88" height="31" class="pixelated" />
+        <img src="/gifs/badge-y2k.gif" alt="100% Y2K ready" width="88" height="31" class="pixelated" />
+        <img src="/gifs/badge-notepad.gif" alt="Made with Notepad" width="88" height="31" class="pixelated" />
+        <img src="/gifs/badge-modem.gif" alt="Optimized for 56k modem" width="88" height="31" class="pixelated" />
+        <img src="/gifs/badge-ie.gif" alt="Also works in IE 5.5" width="88" height="31" class="pixelated" />
+      </div>
+
+      <div class="cert">
+        <div class="cert-title">HTML-KONFORMITÄTSZERTIFIKAT</div>
+        <p>
+          Hiermit wird bestätigt, dass die vorliegende Homepage dem <strong>HTML-3.2-Standard</strong> in
+          vollem Umfang entspricht. Die Prüfung umfasste Struktur, Tag-Verwendung und Farbdarstellung
+          bei 800×600.
+        </p>
+        <p class="cert-meta">
+          Zertifikat-Nr. HTML-1996-063 · Ausgestellt am 17.11.2026 · Gültig bis auf Widerruf<br />
+          Geprüft durch die Abteilung Web-Qualität der Relacibo's KI-Beratung GmbH &amp; Co. KGaA
+        </p>
+        <div class="cert-sig">
+          <div>
+            <div class="cert-signature">Relacibo</div>
+            <div class="cert-signature-label">Webmaster &amp; Zertifizierungsstelle</div>
+          </div>
+          <img src="/gifs/seal.gif" alt="Prüfsiegel" width="76" height="76" class="pixelated" />
+        </div>
+      </div>
+
+      <div class="webring">
+        🌐 Mitglied im <strong>KI-Hype-Webring #0000199</strong> 🌐<br />
+        <a href="/">« Zurück</a> · <a href="/">Zufällig</a> · <a href="/">Weiter »</a>
+      </div>
+
+      <footer>
+        <p>
+          © 1996–2026 <strong>Relacibo's KI-Beratung GmbH &amp; Co. KGaA</strong> — Alle Rechte vorbehalten.
+        </p>
+        <p>
+          Letztes Update: 17.11.2026 · <a href="https://github.com/Relacibo">Impressum</a> ·
+          Optimiert für Netscape Navigator 4.0 bei 800×600 und 56k-Modem
+        </p>
+        <p>Erstellt mit AI: <strong>GLM-5.3-Flash</strong>.</p>
+        <p class="heart-line">
+          Made with <img src="/gifs/heart.gif" alt="Herz" width="22" height="22" class="pixelated" /> and Notepad.
+          Diese Website verwendet KEINE Cookies. Nur einen Besucherzähler und Sterne.
+        </p>
+      </footer>
     </div>
   </main>
+
+  <div class="page-blinds" aria-hidden="true">
+    {Array.from({ length: 8 }, (_, i) => (
+      <div class="blind" style={`top: ${i * 12.5}%; animation-delay: ${(i * 0.45).toFixed(2)}s;`}></div>
+    ))}
+  </div>
 </Layout>
 
+<script is:inline>
+  // --- klassischer Cursor-Sternchen-Trail ---
+  if (matchMedia("(pointer: fine)").matches) {
+    const trailEmojis = ["✨", "⭐", "💫", "✦"];
+    let lastTrail = 0;
+    addEventListener("mousemove", (e) => {
+      const now = performance.now();
+      if (now - lastTrail < 60) return;
+      lastTrail = now;
+      const s = document.createElement("span");
+      s.className = "trail";
+      s.textContent = trailEmojis[Math.floor(Math.random() * trailEmojis.length)];
+      s.style.left = e.clientX + "px";
+      s.style.top = e.clientY + "px";
+      s.style.fontSize = 10 + Math.random() * 12 + "px";
+      document.body.appendChild(s);
+      s.addEventListener("animationend", () => s.remove());
+    });
+  }
+
+  // --- Besucherzähler (100% echt, wie oben geschrieben) ---
+  (() => {
+    const base = 1996;
+    let visits = 1;
+    try {
+      visits = parseInt(localStorage.getItem("relacibo_hits") || "1", 10) + 1;
+      localStorage.setItem("relacibo_hits", String(visits));
+    } catch (e) {}
+    const num = String(base + visits).padStart(6, "0");
+    const el = document.getElementById("counter-digits");
+    if (el) el.innerHTML = [...num].map((d) => `<span class="digit">${d}</span>`).join("");
+  })();
+
+  // --- Webring & Hinweis-Dialoge ---
+  document.querySelectorAll("[data-alert]").forEach((el) =>
+    el.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      alert(el.dataset.alert);
+    })
+  );
+
+  // --- Fake-Newsletter ---
+  const nl = document.getElementById("newsletter");
+  if (nl)
+    nl.addEventListener("submit", (ev) => {
+      ev.preventDefault();
+      alert(
+        "Vielen Dank für Ihre Anmeldung. Ihre Bestätigungs-E-Mail wird umgehend versendet."
+      );
+      nl.reset();
+    });
+
+  // --- MEGA MIDI MUSIK (WebAudio-Chiptune, „Ode an die Freude") ---
+  (() => {
+    const btn = document.getElementById("midi-btn");
+    if (!btn) return;
+    const N = {
+      C5: 523.25, D5: 587.33, E5: 659.25, F5: 698.46, G5: 783.99,
+    };
+    // [Frequenz, Dauer in Sechzehnteln] — 0 = Pause
+    const MELODY = [
+      [N.E5,4],[N.E5,4],[N.F5,4],[N.G5,4],[N.G5,4],[N.F5,4],[N.E5,4],[N.D5,4],
+      [N.C5,4],[N.C5,4],[N.D5,4],[N.E5,4],[N.E5,6],[N.D5,2],[N.D5,8],
+      [N.E5,4],[N.E5,4],[N.F5,4],[N.G5,4],[N.G5,4],[N.F5,4],[N.E5,4],[N.D5,4],
+      [N.C5,4],[N.C5,4],[N.D5,4],[N.E5,4],[N.D5,6],[N.C5,2],[N.C5,8],
+    ];
+    const STEP = 0.15;
+    let ctx = null, timer = null, nextTime = 0, idx = 0, playing = false;
+
+    function playNote(freq, when, dur) {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = "square";
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.045, when);
+      gain.gain.setValueAtTime(0.045, when + dur - 0.03);
+      gain.gain.linearRampToValueAtTime(0, when + dur);
+      osc.connect(gain).connect(ctx.destination);
+      osc.start(when);
+      osc.stop(when + dur);
+    }
+
+    function schedule() {
+      while (nextTime < ctx.currentTime + 0.8) {
+        const [freq, len] = MELODY[idx];
+        const dur = len * STEP;
+        if (freq > 0) playNote(freq, nextTime, Math.max(dur - 0.02, 0.05));
+        nextTime += dur;
+        idx = (idx + 1) % MELODY.length;
+      }
+    }
+
+    btn.addEventListener("click", () => {
+      if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+      if (playing) {
+        clearInterval(timer);
+        playing = false;
+        btn.textContent = "🎵 MEGA-MIDI-Musik: AUS";
+      } else {
+        if (ctx.state === "suspended") ctx.resume();
+        nextTime = ctx.currentTime + 0.1;
+        idx = 0;
+        schedule();
+        timer = setInterval(schedule, 250);
+        playing = true;
+        btn.textContent = "🎵 MEGA-MIDI-Musik: AN 💿";
+      }
+    });
+  })();
+</script>
+
+<script is:inline>
+  // --- 56k-Streaming: die Seite baut sich von oben nach unten auf ---
+  (() => {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      // Bewegung ausgeschaltet: GIFs sofort komplett zeigen
+      document
+        .querySelectorAll('.window-body img[src*="/gifs/"], .window-body .divider-sparkle')
+        .forEach((el) => {
+          el.style.clipPath = "inset(0 0 0% 0)";
+        });
+      return;
+    }
+    document.documentElement.classList.add("stream-loading");
+
+    const DURATION = 10000;
+    const bar = document.createElement("div");
+    bar.className = "netload-bar";
+    bar.innerHTML =
+      '<span class="netload-label"></span>' +
+      '<span class="netload-meter"><span class="netload-fill"></span></span>' +
+      '<span class="netload-speed">28,8 kbps</span>';
+    document.body.appendChild(bar);
+    const label = bar.querySelector(".netload-label");
+    const fill = bar.querySelector(".netload-fill");
+
+    /* Der Text baut sich sehr schnell von oben nach unten auf (Rahmen wächst mit) */
+    const chunks = document.querySelectorAll(".window-body > *");
+    chunks.forEach((el, i) => {
+      const when = 120 + 1100 * (i / chunks.length) + Math.random() * 40;
+      setTimeout(() => el.classList.add("arrived"), when);
+    });
+
+    /* Die GIFs laden unregelmäßig nach (5–20 s).
+       Gleiche GIFs (gleiche Quelle) laden synchron im gleichen Tempo. */
+    const BANDS = 24;
+    const schedules = new Map();
+    function scheduleFor(key) {
+      if (!schedules.has(key)) {
+        const target = 5000 + Math.random() * 15000;
+        const times = [];
+        let prev = 0;
+        for (let i = 1; i <= BANDS; i++) {
+          let t = (i / BANDS) * target + (Math.random() - 0.5) * (target / BANDS) * 1.7;
+          if (t <= prev) t = prev + 100;
+          prev = t;
+          times.push(Math.round(t));
+        }
+        schedules.set(key, times);
+      }
+      return schedules.get(key);
+    }
+    document
+      .querySelectorAll('.window-body img[src*="/gifs/"], .window-body .divider-sparkle')
+      .forEach((el) => {
+        const key = el.src || "sparkle";
+        el.style.clipPath = "inset(0 0 100% 0)";
+        scheduleFor(key).forEach((t, i) => {
+          const open = Math.round(((i + 1) / BANDS) * 100);
+          setTimeout(() => {
+            el.style.clipPath = "inset(0 0 " + (100 - open) + "% 0)";
+          }, t);
+        });
+      });
+
+    let elapsed = 0;
+    const statusTimer = setInterval(() => {
+      elapsed += 250;
+      const pct = Math.min(100, Math.round((elapsed / DURATION) * 100));
+      fill.style.width = pct + "%";
+      label.textContent =
+        "Lade Homepage von relacibo.github.io … " + pct + "%  (" + (elapsed / 1000).toFixed(1).replace(".", ",") + " s)";
+      if (elapsed < DURATION + 250) return;
+      clearInterval(statusTimer);
+      fill.style.width = "100%";
+      label.textContent =
+        "Fertig — 1,4 MB in " + (DURATION / 1000).toFixed(1).replace(".", ",") + " Sekunden übertragen. Die restlichen Bilder folgen. (56k-Modem)";
+      bar.querySelector(".netload-speed").textContent = "⚡";
+      document.documentElement.classList.remove("stream-loading");
+      setTimeout(() => {
+        bar.style.opacity = "0";
+      }, 2600);
+    }, 250);
+  })();
+</script>
+
+<script is:inline>
+  // --- Einseiten-Webring: beide Richtungen laden diese Seite neu ---
+  document.querySelectorAll(".webring a").forEach((a) => {
+    a.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      window.scrollTo(0, 0);
+      location.reload();
+    });
+  });
+
+  // --- Terminbuchung: fertige E-Mail via mailto + Fax-Backup-Gag ---
+  (() => {
+    const booking = document.getElementById("booking-form");
+    if (!booking) return;
+    const dateInput = document.getElementById("booking-date");
+    const dateHint = document.getElementById("booking-hint");
+    const earliest = new Date();
+    earliest.setDate(earliest.getDate() + 1);
+    if (dateInput) dateInput.min = earliest.toISOString().slice(0, 10);
+    if (dateHint)
+      dateHint.textContent =
+        "Frühester verfügbarer Termin: " +
+        earliest.toLocaleDateString("de-DE") +
+        " — das Mikrofon bestellen wir dann gemeinsam am Tag 2.";
+    const slotSelect = document.getElementById("booking-slot");
+    if (slotSelect) slotSelect.disabled = !dateInput || !dateInput.value;
+    if (dateInput)
+      dateInput.addEventListener("input", () => {
+        if (slotSelect) slotSelect.disabled = !dateInput.value;
+      });
+
+    /* Persönliche Zeitfenster: zufällig, aber pro Besucher konsistent (localStorage) */
+    const POOL_START = 8 * 60;
+    const POOL_END = 17 * 60;
+    function fmtMin(min) {
+      return (
+        String(Math.floor(min / 60)).padStart(2, "0") +
+        ":" +
+        String(min % 60).padStart(2, "0")
+      );
+    }
+    function generateSlots() {
+      const starts = new Set();
+      while (starts.size < 4) {
+        const s =
+          POOL_START +
+          Math.floor(Math.random() * (POOL_END - POOL_START - 15));
+        starts.add(s - (s % 5)); // auf 5-Minuten-Raster runden
+      }
+      return [...starts]
+        .sort((a, b) => a - b)
+        .map((s) => fmtMin(s) + "–" + fmtMin(s + 15) + " Uhr");
+    }
+    /* Persönliche Zeitfenster: pro Tag neu berechnet, am selben Tag konsistent */
+    const today = new Date().toISOString().slice(0, 10);
+    let slots = null;
+    let stored = null;
+    try {
+      stored = JSON.parse(localStorage.getItem("relacibo_slots") || "null");
+    } catch (e) {
+      stored = null;
+    }
+    if (
+      stored &&
+      stored.tag === today &&
+      Array.isArray(stored.slots) &&
+      stored.slots.length >= 4
+    ) {
+      slots = stored.slots;
+    } else {
+      slots = generateSlots();
+      try {
+        localStorage.setItem(
+          "relacibo_slots",
+          JSON.stringify({ tag: today, slots })
+        );
+      } catch (e) {}
+    }
+    if (slotSelect) {
+      slotSelect.innerHTML = "";
+      slots.forEach((s) => {
+        const opt = document.createElement("option");
+        opt.textContent = s;
+        slotSelect.appendChild(opt);
+      });
+      const fax = document.createElement("option");
+      fax.textContent = "Nach Absprache (per Fax)";
+      slotSelect.appendChild(fax);
+    }
+
+    booking.addEventListener("submit", (ev) => {
+      ev.preventDefault();
+      if (!booking.reportValidity()) return;
+      const val = (id) => {
+        const el = document.getElementById(id);
+        return el && el.value ? el.value.trim() : "";
+      };
+      const date = val("booking-date");
+      const dateDe = date ? new Date(date + "T12:00:00").toLocaleDateString("de-DE") : "—";
+      const subject = "Terminbuchung — Relacibo KI-Beratung (63-Tage-Methode™)";
+      const body =
+        "Guten Tag,\n\n" +
+        "hiermit buche ich einen Beratungstermin (63-Tage-Methode™).\n\n" +
+        "Name: " + val("booking-name") + "\n" +
+        "Wunschtermin: " + dateDe + "\n" +
+        "Zeitfenster: " + (val("booking-slot") || "—") + "\n" +
+        "Anliegen: " + (val("booking-topic") || "—") + "\n\n" +
+        "Mit freundlichen Grüßen";
+      window.location.href =
+        "mailto:reinhard_bronner@t-online.de?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(body);
+    });
+    const faxBtn = document.getElementById("fax-btn");
+    if (faxBtn)
+      faxBtn.addEventListener("click", () => {
+        alert(
+          "Das Faxgerät ist momentan im Einsatz (Empfang Ihrer Wallet-Adresse). Bitte verwenden Sie den E-Mail-Knopf — oder versuchen Sie es in 2 Monaten erneut."
+        );
+      });
+  })();
+</script>
+
 <style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    border: solid black 2px;
-    border-radius: 1rem;
-    font-size: 20px;
+  /* ===================== Win95-Fenster ===================== */
+  .win95 {
+    max-width: 860px;
+    margin: 1.5rem auto 3rem;
+    border: 5px solid;
+    border-image: linear-gradient(
+        90deg,
+        #ff4d4d,
+        #ffb84d,
+        #ffff4d,
+        #4dff88,
+        #4dd2ff,
+        #d24dff,
+        #ff4d4d
+      )
+      1;
+    background: rgba(8, 6, 22, 0.94);
+    box-shadow: 0 0 24px rgba(210, 77, 255, 0.45);
+  }
+
+  .midi-row {
+    text-align: center;
+    margin: 0.4rem 0 0.8rem;
+  }
+
+  .wbtn {
+    background: #c0c0c0;
+    border: 2px outset #c0c0c0;
+    color: #000;
+    font-family: inherit;
+    font-size: 0.8rem;
+    padding: 0.05rem 0.5rem;
+    cursor: pointer;
+  }
+  .wbtn:active {
+    border-style: inset;
+  }
+  .wbtn.bold {
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .window-body {
+    padding: 1.25rem 1.4rem 1.8rem;
+    color: #ffe600;
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+
+  /* ===================== WordArt-Titel ===================== */
+  .wordart {
+    font-size: clamp(2.2rem, 8vw, 3.6rem);
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.1;
+    margin: 0.5rem 0 0.75rem;
+    background: linear-gradient(
+      90deg,
+      #ff4d4d,
+      #ffb84d,
+      #ffff4d,
+      #4dff88,
+      #4dd2ff,
+      #d24dff,
+      #ff4d4d
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-slide 5s linear infinite;
+    filter: drop-shadow(3px 3px 0 rgba(0, 0, 0, 0.9)) drop-shadow(0 0 10px #ff7bff);
+  }
+  @keyframes rainbow-slide {
+    to {
+      background-position: 200%;
+    }
+  }
+
+  .official {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+    margin: 0 0 1rem;
+  }
+  .official span {
+    color: #7df9ff;
+  }
+
+  .marquee-box {
+    border: 2px inset #808080;
+    background: #000;
+    padding: 0.3rem 0;
+    font-weight: 700;
+    color: #ffec4d;
+    font-size: 1rem;
+  }
+
+  .divider {
+    display: block;
+    width: 100%;
+    height: 14px;
+    margin: 1.2rem 0;
+  }
+  /* Funkel-Trenner: kacheln statt strecken, sonst werden Sterne zu Strichen */
+  .divider-sparkle {
+    display: block;
+    width: 100%;
+    height: 22px;
+    margin: 1.2rem 0;
+    background: url("/gifs/sparkle.gif") repeat-x center;
+    image-rendering: pixelated;
+  }
+  .pixelated {
+    image-rendering: pixelated;
+  }
+
+  .intro strong {
+    color: #4dff88;
+  }
+  .neon {
+    color: #ff7bff;
+    text-shadow: 0 0 8px #ff7bff;
+  }
+  .blink {
+    animation: blinker 1.1s steps(2, start) infinite;
+  }
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  /* ===================== Überschriften ===================== */
+  h2 {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #7df9ff;
+    text-shadow: 2px 2px 0 #b020b0;
+    margin: 1.6rem 0 0.9rem;
+  }
+
+  /* ===================== Methode-Tabelle ===================== */
+  .method-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 4px outset #b0b0c8;
+    background: #000;
+    font-size: 1rem;
+  }
+  .method-table th {
+    background: linear-gradient(180deg, #000080, #1084d0);
+    color: #fff;
+    padding: 0.55rem;
+    border: 2px outset #808080;
+    font-size: 1.05rem;
+  }
+  .method-table td {
+    border: 1px solid #444;
+    padding: 0.6rem 0.75rem;
+    vertical-align: top;
+  }
+  .method-table tr:nth-child(even) td {
+    background: #0d0d24;
+  }
+  .day {
+    font-weight: 700;
+    color: #ff7bff;
+    white-space: nowrap;
+  }
+  .method-table code {
+    color: #39ff5a;
+    background: #001a00;
+    padding: 0.1em 0.3em;
+    border: 1px solid #0a4a0a;
+  }
+  .sysreq {
+    margin: 0.45rem 0 0.1rem;
+    padding: 0;
+    list-style: none;
+    font-size: 0.92rem;
+  }
+  .sysreq li {
+    margin: 0.18rem 0;
+    padding-left: 1.05rem;
+    position: relative;
+  }
+  .sysreq li::before {
+    content: "►";
+    position: absolute;
+    left: 0;
+    top: 0.22em;
+    color: #7df9ff;
+    font-size: 0.7rem;
+  }
+  .table-foot {
+    text-align: center;
+    margin: 0.9rem 0 0;
+  }
+
+  /* ===================== Testimonials ===================== */
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    padding: 0;
+    margin: 0 0 0.5rem;
+  }
+  .tst {
+    list-style: none;
+    border: 3px outset #9090b8;
+    background: #101024;
+    padding: 0.8rem 1rem;
+    font-style: italic;
+    font-size: 0.98rem;
+  }
+  .tst .who {
+    color: #ff85e0;
+    font-style: normal;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    text-align: right;
+  }
+
+  /* ===================== Preis & Newsletter ===================== */
+  .pricebox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    border: 5px dashed #ff4dff;
+    background: #120a26;
+    padding: 1rem 1.2rem;
+    text-align: center;
+  }
+  .price-old {
+    text-decoration: line-through;
+    color: #999;
+    margin: 0;
+  }
+  .price-new {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4dff88;
+    text-shadow: 0 0 12px #4dff88;
+    margin: 0;
+  }
+  .price-note {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin: 0.3rem 0 0;
+  }
+  .price-dm {
+    font-size: 1.1rem;
+    color: #ffe600;
+    text-shadow: none;
+  }
+  .smallprint {
+    font-size: 0.85rem;
+    color: #9a9ab8;
+    text-align: center;
+  }
+  .center {
+    text-align: center;
+  }
+
+  .newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.6rem;
+  }
+  .newsletter input {
+    border: 3px inset #808080;
+    background: #000;
+    color: #39ff5a;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.45rem 0.7rem;
+    width: min(320px, 90%);
+  }
+  .newsletter input::placeholder {
+    color: #33773a;
+  }
+
+  /* ===================== Terminbuchung ===================== */
+  .booking {
+    max-width: 560px;
+    margin: 0.6rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .booking label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+    color: #7df9ff;
+  }
+  .booking input,
+  .booking select {
+    border: 3px inset #808080;
+    background: #000;
+    color: #39ff5a;
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.6rem;
+  }
+  .booking input::placeholder {
+    color: #33773a;
+  }
+  .booking select:disabled {
+    color: #6a6a72;
+    background: #111;
+  }
+  .booking-hint {
+    font-size: 0.8rem;
+    color: #9a9ab8;
+  }
+  .booking-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+    margin-top: 0.4rem;
+  }
+
+  /* ===================== Counter & Co ===================== */
+  .counter-box {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+  .hurry {
+    margin: 1.5rem auto 0.5rem;
+    max-width: 480px;
+    text-align: center;
+    font-weight: 700;
+    color: #ffec4d;
+    border: 2px dashed #ffec4d;
+    padding: 0.4rem;
+    font-size: 0.95rem;
+  }
+  .arrow-img {
+    display: block;
+    margin: 1.5rem auto 0;
+  }
+
+  .guestbook {
+    border: 3px outset #9090b8;
+    background: #0d0d24;
+    padding: 0.5rem;
+    margin-top: 0.8rem;
+  }
+
+  /* ===================== Bauzone / Badges / Webring ===================== */
+  .bau {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  /* ===================== Zertifikat ===================== */
+  .cert {
+    max-width: 540px;
+    margin: 1.2rem auto 0;
+    border: 6px double #ffd700;
+    background: #0a0a1e;
+    padding: 1.2rem 1.4rem 1rem;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    color: #e8e8d8;
+  }
+  .cert-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #ffd700;
+    margin-bottom: 0.8rem;
+  }
+  .cert p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0.4rem 0;
+  }
+  .cert-meta {
+    font-size: 0.78rem;
+    color: #9a9ab8;
+  }
+  .cert-sig {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 1.1rem;
+    padding: 0 0.4rem;
+  }
+  .cert-signature {
+    font-family: "Pacifico", cursive;
+    font-size: 1.7rem;
+    color: #7df9ff;
+    transform: rotate(-4deg);
+    line-height: 1.2;
+  }
+  .cert-signature-label {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 0.72rem;
+    color: #9a9ab8;
+    border-top: 1px solid #9090b8;
+    padding-top: 3px;
+    margin-top: 4px;
+  }
+  .cert-links {
+    text-align: center;
+    margin: 0.7rem 0 0;
+    font-size: 0.95rem;
+  }
+
+  .webring {
+    text-align: center;
+    border: 2px inset #808080;
+    background: #000;
+    padding: 0.7rem;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+
+  footer {
+    margin-top: 1.6rem;
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    color: #8888aa;
+    text-align: center;
     line-height: 1.6;
   }
-  .astro-a {
-    position: absolute;
-    top: -32px;
-    left: 50%;
-    transform: translatex(-50%);
-    width: 220px;
-    height: auto;
-    z-index: -1;
-  }
-  h1 {
-    font-family: "Pacifico", sans-serif;
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-    color: white;
+  .heart-line img {
+    vertical-align: middle;
   }
 
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-
-  .instructions {
-    margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    padding: 1.5rem;
-    border-radius: 8px;
-  }
-  .instructions code {
-    font-size: 0.8em;
-    font-weight: bold;
-    background: rgba(var(--accent-light), 12%);
-    color: rgb(var(--accent-light));
-    border-radius: 4px;
-    padding: 0.3em 0.4em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent-light));
-  }
-
-  .my-image {
-    margin-top: 1rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: fit-content;
-    height: fit-content;
-  }
-
-  .the-image {
-    border-radius: 5px;
-  }
-
-  .utterances-comments {
-    margin-top: 1rem;
-  }
-
-  @media (max-width: 767px) {
-    main {
-      border: none;
+  @media (max-width: 640px) {
+    .window-body {
+      padding: 1rem 0.8rem 1.4rem;
     }
+    .pricebox {
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .official {
+      flex-wrap: wrap;
+    }
+  }
+</style>
+
+<style is:global>
+  /* Vom JS erzeugte Elemente (Sparkle-Trail + Zähler-Ziffern) */
+  .trail {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    animation: trail-fall 0.7s ease-out forwards;
+  }
+  @keyframes trail-fall {
+    to {
+      transform: translateY(26px) rotate(25deg) scale(0.4);
+      opacity: 0;
+    }
+  }
+  .digit {
+    display: inline-block;
+    background: #000;
+    border: 1px solid #555;
+    color: #39ff5a;
+    font-family: "Courier New", monospace;
+    font-weight: 700;
+    font-size: 1.3rem;
+    padding: 0.15rem 0.35rem;
+    margin: 0 1px;
+    text-shadow: 0 0 8px #39ff5a;
   }
 </style>
