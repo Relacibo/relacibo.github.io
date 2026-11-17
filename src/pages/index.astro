@@ -603,8 +603,13 @@ import "@fontsource/pacifico";
         "Zeitfenster: " + (val("booking-slot") || "—") + "\n" +
         "Anliegen: " + (val("booking-topic") || "—") + "\n\n" +
         "Mit freundlichen Grüßen";
+      const TO = encodeURIComponent(
+        '"Relacibo\'s KI-Beratung" <reinhard_bronner@t-online.de>'
+      );
       window.location.href =
-        "mailto:reinhard_bronner@t-online.de?subject=" +
+        "mailto:" +
+        TO +
+        "?subject=" +
         encodeURIComponent(subject) +
         "&body=" +
         encodeURIComponent(body);
