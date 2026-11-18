@@ -372,6 +372,31 @@ def worker():
     save(frames, "worker.gif", duration=320, colors=16)
 
 
+# ------------------------------------------- gemini installationsdiskette
+def diskette():
+    body = (40, 60, 140)
+    dark = (20, 30, 70)
+    metal = (190, 195, 205)
+    metal2 = (150, 156, 168)
+    label = (245, 243, 230)
+    ink = (30, 30, 60)
+    frames = []
+    for f in range(4):
+        img = Image.new("RGB", (40, 40), (0, 0, 0))
+        d = ImageDraw.Draw(img)
+        # Koerper mit abgeschrägter Ecke oben rechts
+        d.polygon([(2, 2), (31, 2), (37, 8), (37, 37), (2, 37)], fill=body, outline=dark)
+        # Metallschieber mit gleitendem Glanz
+        d.rectangle([10, 2, 27, 13], fill=metal, outline=dark)
+        hx = 13 + f * 3
+        d.rectangle([hx, 4, hx + 9, 11], fill=metal2)
+        # Label mit GEMINI
+        d.rectangle([5, 19, 33, 35], fill=label, outline=dark)
+        d.text((19, 26), "GEMINI", fill=ink, font=font(6), anchor="mm")
+        frames.append(img)
+    save(frames, "diskette.gif", duration=400, colors=16)
+
+
 # -------------------------------------------------------------- skull (punk!)
 def skull():
     frames = []
@@ -464,6 +489,7 @@ if __name__ == "__main__":
     flames()
     skull()
     robot()
+    diskette()
     worker()
     badges()
     seal()
