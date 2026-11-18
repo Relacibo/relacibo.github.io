@@ -422,16 +422,17 @@ def skull():
 
 
 # ------------------------------------------------------------- 88x31 badges
-def badge(name, line1, line2, bg, fg, accent):
+def badge(name, line1, line2, bg, fg, accent, sizes=(10, 10)):
     w, h = 88, 31
-    fnt = font(10)
+    fnt = font(sizes[0])
+    fnt2 = font(sizes[1])
     frames = []
     for f in range(2):
         img = Image.new("RGB", (w, h), bg)
         d = ImageDraw.Draw(img)
         d.rectangle([0, 0, w - 1, h - 1], outline=accent if f else fg)
         d.text((w / 2, 9), line1, fill=fg, font=fnt, anchor="mm")
-        d.text((w / 2, 21), line2, fill=accent if f else fg, font=fnt, anchor="mm")
+        d.text((w / 2, 21), line2, fill=accent if f else fg, font=fnt2, anchor="mm")
         frames.append(img)
     save(frames, f"badge-{name}.gif", duration=600, colors=8)
 
@@ -440,7 +441,7 @@ def badges():
     badge("netscape", "BEST VIEWED IN", "NETSCAPE 4.0", (0, 0, 90), (255, 255, 255), (255, 220, 0))
     badge("y2k", "100%", "Y2K READY", (0, 0, 0), (0, 220, 80), (180, 255, 60))
     badge("html", "POWERED BY", "HTML 3.2", (90, 0, 0), (255, 255, 255), (255, 150, 0))
-    badge("notepad", "MADE WITH", "NOTEPAD", (200, 200, 200), (0, 0, 0), (120, 120, 220))
+    badge("notepad", "MADE WITH NOTEPAD", "MIT VIM KEYBINDINGS", (200, 200, 200), (0, 0, 0), (120, 120, 220), sizes=(8, 7))
     badge("modem", "OPTIMIZED FOR", "56k MODEM", (30, 0, 60), (255, 255, 255), (255, 80, 255))
     badge("ie", "ALSO WORKS IN", "IE 5.5 (?!) ", (0, 40, 90), (255, 255, 255), (60, 200, 255))
 
