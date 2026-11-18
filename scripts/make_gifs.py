@@ -324,6 +324,54 @@ def robot():
     save(frames, "robot.gif", duration=350, colors=16)
 
 
+# ------------------------------------------------------ construction worker
+def worker():
+    yellow = (255, 210, 63)
+    skin = (242, 196, 155)
+    orange = (255, 123, 0)
+    stripe = (255, 236, 77)
+    blue = (52, 68, 128)
+    dark = (40, 40, 40)
+    grey = (150, 150, 150)
+    brown = (122, 84, 48)
+    frames = []
+    for f in range(4):
+        img = Image.new("RGB", (42, 54), (5, 3, 15))
+        d = ImageDraw.Draw(img)
+        # Boden
+        d.rectangle([0, 47, 41, 49], fill=grey)
+        # Schutzhelm
+        d.rectangle([10, 1, 24, 5], fill=yellow)
+        d.rectangle([8, 5, 26, 7], fill=yellow)
+        # Gesicht
+        d.rectangle([11, 8, 23, 14], fill=skin)
+        d.rectangle([13, 10, 14, 11], fill=dark)
+        d.rectangle([19, 10, 20, 11], fill=dark)
+        # Warnweste mit Reflexionsstreifen
+        d.rectangle([9, 15, 25, 31], fill=orange)
+        d.rectangle([9, 22, 25, 24], fill=stripe)
+        # Arme
+        d.rectangle([6, 16, 9, 26], fill=skin)
+        d.rectangle([25, 16, 28, 26], fill=skin)
+        # Beine + Stiefel
+        d.rectangle([12, 32, 16, 46], fill=blue)
+        d.rectangle([18, 32, 22, 46], fill=blue)
+        d.rectangle([11, 46, 17, 48], fill=dark)
+        d.rectangle([17, 46, 23, 48], fill=dark)
+        # Schaufel gräbt (Blatt-Tiefe pro Frame)
+        by = 36 + f * 2
+        d.line([26 + f, 18 + f, 33, by], fill=grey)
+        d.rectangle([31, by, 38, by + 6], fill=grey)
+        # Erdbrocken fliegen beim Aushub
+        if f in (1, 2):
+            d.rectangle([30 + f, 30 - f * 4, 31 + f, 31 - f * 4], fill=brown)
+            d.rectangle([34 - f, 26 + f * 2, 35 - f, 27 + f * 2], fill=brown)
+        # Haufen
+        d.ellipse([26, 42, 41, 49], fill=brown)
+        frames.append(img)
+    save(frames, "worker.gif", duration=320, colors=16)
+
+
 # -------------------------------------------------------------- skull (punk!)
 def skull():
     frames = []
@@ -416,6 +464,7 @@ if __name__ == "__main__":
     flames()
     skull()
     robot()
+    worker()
     badges()
     seal()
     print("Fertig!")

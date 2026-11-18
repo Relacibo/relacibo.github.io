@@ -233,7 +233,10 @@ import "@fontsource/pacifico";
       <img src="/gifs/rainbow.gif" alt="Regenbogen-Trenner" class="divider pixelated" />
 
       <div class="bau">
-        <img src="/gifs/construction.gif" alt="Baustelle" width="150" height="96" class="pixelated" />
+        <div class="bau-row">
+          <img src="/gifs/construction.gif" alt="Baustellen-Schild" width="150" height="96" class="pixelated" />
+          <img src="/gifs/worker.gif" alt="Baustellen-Typ beim Graben" width="84" height="108" class="pixelated" />
+        </div>
         <p><strong>HIER KOMMT DEMNÄCHST EIN SCHAUBILD UNSERER LEISTUNGEN HIN.</strong></p>
         <p class="smallprint">Der Platz ist bereits reserviert. Das Schaubild entsteht
         derzeit in Microsoft® Paint.</p>
@@ -991,6 +994,13 @@ import "@fontsource/pacifico";
   .bau {
     text-align: center;
     margin-top: 1.5rem;
+  }
+  .bau-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+    align-items: center;
   }
 
   .badges {
